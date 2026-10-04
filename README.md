@@ -19,7 +19,9 @@ Movement:
 - The run uses Roblox's R15 Ninja run animation instead of the default one.
 - Wall running: while moving along a wall, jump, then press jump again next to it. You run along the wall for up to 1.5 s. Press jump again to leap off. Each wall run costs stamina, and you can't run on the same wall twice before you land.
 
-Every number you might want to balance is in `src/shared/Config.luau`.
+Movement feel (`src/character/MovementFeel.client.luau`, a LocalScript in StarterCharacterScripts): the character speeds up and slows down smoothly, leans into turns, crouches on landing, turns its head and torso toward the camera, plants its feet on slopes and stairs, and the camera bobs and widens at speed. Its tuning values are in the `CONFIG` table at the top of that script.
+
+Every gameplay number you might want to balance is in `src/shared/Config.luau`.
 
 ## Setup on Windows
 
@@ -69,6 +71,7 @@ Studio has a built-in MCP server. In Studio, open **Assistant**, then **⋯ > Ma
 | `src/server/Services/LeaderboardService.luau` | | leaderstats for the round |
 | `src/shared/` | ReplicatedStorage.Shared | Config, shared types, remote events |
 | `src/client/` | StarterPlayerScripts.Client | HUD, order phone, waypoint beam, sprint and wall running |
+| `src/character/` | StarterCharacterScripts | MovementFeel: momentum, lean, landing, head look, foot IK, camera bob |
 
 ## Building your own map
 

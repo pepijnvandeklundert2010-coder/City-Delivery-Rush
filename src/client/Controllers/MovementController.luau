@@ -187,13 +187,10 @@ local function stepSprint(dt: number)
 	end
 
 	if h then
-		h.WalkSpeed = if sprinting then Movement.SprintSpeed else Movement.WalkSpeed
-	end
-
-	local camera = workspace.CurrentCamera
-	if camera then
-		local target = if sprinting then Movement.SprintFieldOfView else Movement.NormalFieldOfView
-		camera.FieldOfView += (target - camera.FieldOfView) * math.min(1, dt * 8)
+		-- Ease between walk and sprint speed. The camera's speed-based field of view is
+		-- handled by MovementFeel (StarterCharacterScripts).
+		local target = if sprinting then Movement.SprintSpeed else Movement.WalkSpeed
+		h.WalkSpeed += (target - h.WalkSpeed) * (1 - math.exp(-Movement.SprintBlendRate * dt))
 	end
 
 	local share = stamina / Movement.StaminaMax
