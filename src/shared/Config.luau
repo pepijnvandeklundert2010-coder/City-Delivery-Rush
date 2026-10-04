@@ -107,8 +107,7 @@ Config.Movement = {
 	StaminaRegenDelaySeconds = 1,
 	-- After running out, sprinting starts again only once stamina is back to this.
 	MinStaminaToSprint = 20,
-	NormalFieldOfView = 70,
-	SprintFieldOfView = 80,
+	SprintBlendRate = 6, -- how quickly speed eases between walk and sprint
 	-- Roblox's own R15 "Ninja" run. Swap for any run animation you own or that Roblox publishes.
 	RunAnimationId = "rbxassetid://656118852",
 	WallRun = {
