@@ -98,6 +98,33 @@ Config.Shops = {
 	},
 } :: { ShopConfig }
 
+Config.Movement = {
+	WalkSpeed = 16,
+	SprintSpeed = 26,
+	StaminaMax = 100,
+	StaminaDrainPerSecond = 22,
+	StaminaRegenPerSecond = 16,
+	StaminaRegenDelaySeconds = 1,
+	-- After running out, sprinting starts again only once stamina is back to this.
+	MinStaminaToSprint = 20,
+	NormalFieldOfView = 70,
+	SprintFieldOfView = 80,
+	-- Roblox's own R15 "Ninja" run. Swap for any run animation you own or that Roblox publishes.
+	RunAnimationId = "rbxassetid://656118852",
+	WallRun = {
+		DetectDistance = 3.5, -- studs from the character's side to the wall
+		Speed = 30, -- studs per second along the wall
+		StartUpSpeed = 10, -- upward speed when the wall run starts
+		Gravity = 18, -- how fast the upward speed drops, studs per second squared
+		MaxSeconds = 1.5,
+		StaminaCost = 20,
+		JumpOffSpeed = 36, -- push away from the wall on a wall jump
+		JumpUpSpeed = 40,
+		CooldownSeconds = 0.3,
+		LeanDegrees = 15,
+	},
+}
+
 Config.Data = {
 	StoreName = "PlayerData_v1",
 	AutosaveSeconds = 120,
